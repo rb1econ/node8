@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    h1 Applicants
+    for i in theData
+      ul.list-unstyled 
+        li= i.name
+        li= i.bio
+        li= i.skills
+        li= i.years
+        li= i.why

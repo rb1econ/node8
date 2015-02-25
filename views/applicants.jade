@@ -4,9 +4,10 @@ block content
   .container
     h1 Applicants
     for i in theData
-      ul.list-unstyled 
+      ul(class="list-unstyled", data-id=""+i._id+"")
         li= i.name
         li= i.bio
         li= i.skills
         li= i.years
         li= i.why
+        a.deleteBtn.btn.btn-danger Delete Applicant.

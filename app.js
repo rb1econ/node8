@@ -52,6 +52,17 @@ app.post('/applicant', function(req, res){
 	res.redirect('applicants');
 });
 
+app.post('/delete', function(req,res){
+  // console.log('THIS IS A CONSOLE DOT LOG:::line56:::', req.body);
+  Person.findByIdAndRemove(req.body.currentId, function(err, data){
+    if(err) res.send('Error, not deleted')
+    console.log('THIS IS A CONSOLE DOT LOG:::line58:::', err);
+    console.log('This is a console log :::', data);
+    res.send(data);
+  });
+});
+
+
 var server = app.listen(8441, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
